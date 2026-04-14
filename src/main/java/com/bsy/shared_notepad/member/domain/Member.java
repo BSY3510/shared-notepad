@@ -41,4 +41,15 @@ public class Member {
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
+    private Member(String email, String name, String encryptedPassword, MemberRole role) {
+        this.email = email;
+        this.name = name;
+        this.encryptedPassword = encryptedPassword;
+        this.role = role;
+    }
+
+    public static Member create(String email, String name, String encryptedPassword, MemberRole role) {
+        return new Member(email, name, encryptedPassword, role);
+    }
+
 }
